@@ -1,0 +1,25 @@
+.content-reader-textarea {
+  width: 60%;
+}
+
+.content-display-area {
+  text-align: justify;
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.read-new-btn {
+  margin-left: 10px;
+}
+
+.reading-content-container {
+  border: solid 1px;
+  width: 60%;
+  margin-left: 20%;
+  padding: 1%;
+  border-radius: 5px;
+  background-color: #173F5F;
+  margin-bottom: 5%;
+}
