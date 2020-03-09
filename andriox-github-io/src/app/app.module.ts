@@ -9,6 +9,9 @@ import { FormsModule } from '@angular/forms';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { SentenceHighlighterService } from './sentence-highlighter.service';
+import { LineExplorerService } from './line-explorer.service';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -21,9 +24,10 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserAnimationsModule,
     FormsModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatRadioModule
   ],
-  providers: [],
+  providers: [SentenceHighlighterService, LineExplorerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

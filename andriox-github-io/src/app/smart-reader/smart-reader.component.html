@@ -1,4 +1,13 @@
-<div align="center" *ngIf="currentMode == 'SETUP'">
+<div align="center">
+  <!-- <label id="example-radio-group-label">Define Reading Mode</label> -->
+  <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="readingMode">
+    <mat-radio-button class="example-radio-button" *ngFor="let mode of modes" [value]="mode">
+      {{enumValue(mode, 'ReadingMode')}}
+    </mat-radio-button>
+  </mat-radio-group>
+  <!-- {{enumValue(readingMode, 'ReadingMode')}} -->
+</div>
+<div align="center" *ngIf="enumValue(readingStatus, 'ReadingStatus') == 'SETUP'">
   <div>
     <mat-form-field class="content-reader-textarea">
       <mat-label>Paste Content to Read</mat-label>
@@ -9,14 +18,13 @@
     <button (click)="startReading()" mat-raised-button color="primary">START READING</button>
   </div>
 </div>
-
-<div align="center" *ngIf="currentMode == 'READING' || currentMode == 'DONE'" class="reading-content-container">
+<div align="center" *ngIf="enumValue(readingStatus, 'ReadingStatus') == 'READING' || enumValue(readingStatus, 'ReadingStatus') == 'DONE'" class="reading-content-container">
   <div class="content-display-area" *ngFor="let line of currentData">
-    {{line}}
+    <div [innerHTML]="line"></div>
   </div>
 </div>
 
-<div align="center" *ngIf="currentMode == 'DONE'">
+<div align="center" *ngIf="enumValue(readingStatus, 'ReadingStatus') == 'DONE'">
   <h3 style="color:green">You have completed reading all data !</h3>
   <button (click)="readAgain()" mat-raised-button color="primary">READ SAME CONTENT AGAIN</button>
   <button (click)="readNew()" class="read-new-btn" mat-raised-button color="primary">READ SOMETHING NEW</button>

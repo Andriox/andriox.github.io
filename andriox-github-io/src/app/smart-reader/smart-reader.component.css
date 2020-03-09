@@ -2,6 +2,10 @@
   width: 60%;
 }
 
+.example-radio-button {
+  margin-right: 5px;
+}
+
 .content-display-area {
   text-align: justify;
   width: 100%;

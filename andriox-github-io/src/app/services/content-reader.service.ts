@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ReadingMode } from '../sentence-highlighter.service';
 
 @Injectable({
   providedIn: 'root'
@@ -28,15 +29,14 @@ export class Character {
 }
 
 export class Sentence {
-  private maxCharsToDisplay = 86;
   characters: Character[];
 
-  constructor() {
+  constructor(private condition: Function) {
     this.characters = [];
   }
 
-  add(character: Character): boolean {
-    if (this.characters.length == this.maxCharsToDisplay) {
+  add(character: Character, readingMode: ReadingMode): boolean {
+    if (this.condition(this.characters.length, character.getContent())) {
       return false;
     }
     this.characters.push(character);
