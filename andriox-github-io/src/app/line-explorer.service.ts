@@ -8,7 +8,7 @@ import { SmartReaderComponent } from './smart-reader/smart-reader.component';
 })
 export class LineExplorerService {
 
-  condition: Function = (charsLength: Number) => charsLength == 85;
+  condition: Function = (charsLength: Number) => charsLength == 87;
 
   constructor() {
   }

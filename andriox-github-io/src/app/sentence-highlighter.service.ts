@@ -64,7 +64,7 @@ export class SentenceHighlighterService {
             return accumulator + data;
           }, "");
         if (index == caller.currentIndex) {
-          data = "<div class='current-sentence-highlight'>" + data + ".</div>"
+          data = "<span class='current-sentence-highlight'>" + data + ".</span>"
         }
         caller.currentData[index] = data;
       }

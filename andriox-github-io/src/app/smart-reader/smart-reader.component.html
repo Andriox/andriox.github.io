@@ -19,8 +19,13 @@
   </div>
 </div>
 <div align="center" *ngIf="enumValue(readingStatus, 'ReadingStatus') == 'READING' || enumValue(readingStatus, 'ReadingStatus') == 'DONE'" class="reading-content-container">
-  <div class="content-display-area" *ngFor="let line of currentData">
-    <div [innerHTML]="line"></div>
+  <div class="content-display-area">
+    <div *ngIf="enumValue(readingMode, 'ReadingMode') == 'UNCOVER'">
+      <div *ngFor="let line of currentData" [innerHTML]="line"></div>
+    </div>
+    <div *ngIf="enumValue(readingMode, 'ReadingMode') == 'HIGHLIGHTER'">
+      <span *ngFor="let line of currentData" [innerHTML]="line"></span>
+    </div>
   </div>
 </div>
 
