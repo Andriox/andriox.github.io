@@ -1,0 +1,11 @@
+Publish to Github Pages
+
+Url : https://itnext.io/create-your-website-for-free-with-github-pages-angular-4a932a2de309
+
+Steps :
+
+1. ng build --prod --base-href 'https://andriox.github.io/'
+2. ngh --message="Commit message"
+3. ngh --branch=master
+4. ngh --dry-run
+5. ngh

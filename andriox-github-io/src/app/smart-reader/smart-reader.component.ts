@@ -52,10 +52,10 @@ export class SmartReaderComponent implements OnInit {
   startReading() {
     switch (+this.readingMode) {
       case ReadingMode.UNCOVER:
-        this.service = new LineExplorerService(this.contentToRead);
+        this.service = new LineExplorerService();
         break;
       case ReadingMode.HIGHLIGHTER:
-        this.service = new SentenceHighlighterService(this.contentToRead);
+        this.service = new SentenceHighlighterService();
         break;
     }
 

@@ -10,11 +10,11 @@ export class LineExplorerService {
 
   condition: Function = (charsLength: Number) => charsLength == 85;
 
-  constructor(private contentToRead: string) {
+  constructor() {
   }
 
   startReading(caller: SmartReaderComponent) {
-    let chars = this.contentToRead.split('');
+    let chars = caller.contentToRead.split('');
     let sentence = new Sentence(this.condition);
     caller.sentences.push(sentence);
     chars.forEach(value => {

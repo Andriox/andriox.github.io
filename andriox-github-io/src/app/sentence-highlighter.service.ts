@@ -18,13 +18,13 @@ export enum ReadingMode {
 })
 export class SentenceHighlighterService {
 
-  condition: Function = (charSize: number, currentCharacter: string) => currentCharacter == '.';
+  condition: Function = (_maxCharacters: number, currentCharacter: string) => currentCharacter == '.';
 
-  constructor(private contentToRead: string) {
+  constructor() {
   }
 
   startReading(caller: SmartReaderComponent) {
-    let chars = this.contentToRead.split('');
+    let chars = caller.contentToRead.split('');
     let sentence = new Sentence(this.condition);
     caller.sentences.push(sentence);
     chars.forEach(value => {
